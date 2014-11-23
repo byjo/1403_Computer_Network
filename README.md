@@ -3,8 +3,8 @@
 ###141082 조부용
 
 ####chatting
-- chatClient : "./chatClient <IP> <port> <username>"
-- chatServer : "./chatServer <port>"
+- chatClient
+- chatServer
 
 ####webServer
-- webServer : "./webServer"
+- webServer

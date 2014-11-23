@@ -58,7 +58,6 @@ int main(int argc, char *argv[])
 
 		strtok(buf, "/");
 		file = strtok(NULL, " ");
-		//strcat(file, strtok(NULL, " "));
 		
 		printf("%s\n", file);
 		fd = open(file, O_RDONLY);

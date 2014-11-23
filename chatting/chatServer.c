@@ -77,8 +77,6 @@ int main(int argc, char *argv[])
 					printf("accpet() Error\n");
 
 				if (clientSize < MAX_CLIENT - 1){
-					//write(clientSock, connectMessage, MESSAGE_SIZE);
-
 					epollEvent.events = EPOLLIN;
 					epollEvent.data.fd = clientSock;
 					epoll_ctl(epfd, EPOLL_CTL_ADD, clientSock, &epollEvent);
@@ -130,11 +128,11 @@ void deleteClientArr(int *clientArr, int *clientSize, int clientSock)
 	int i;
 
 	for ( i = 0; i < *clientSize; i++ ){
-		if ( clientArr[i] == clientArr[clientSock] )
+		if ( clientArr[i] == clientSock )
 			break;
 	}
 
-	clientArr[i] = clientArr[*clientSize];
+	clientArr[i] = clientArr[*clientSize - 1];
 	(*clientSize)--;
 }
 
